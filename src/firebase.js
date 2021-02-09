@@ -2,15 +2,15 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const firebaseConfig = firebase.initializeApp({
-    apiKey: "AIzaSyCVpF6vjK2B4CcNpwpnD7EMSahDp0utynE",
-    authDomain: "kudos-1427d.firebaseapp.com",
-    projectId: "kudos-1427d",
-    storageBucket: "kudos-1427d.appspot.com",
-    messagingSenderId: "132638764841",
-    appId: "1:132638764841:web:b4fb4cd6a5a5b54cd25138",
-    measurementId: "G-QVWYT1J2SF"
+  apiKey: "AIzaSyBjabCNLs_V8yYyOd5rt1w2lud--6KMW6Q",
+  authDomain: "thessa-26121999.firebaseapp.com",
+  projectId: "thessa-26121999",
+  storageBucket: "thessa-26121999.appspot.com",
+  messagingSenderId: "995634909167",
+  appId: "1:995634909167:web:c781c1ef0a766f467af01a",
+  measurementId: "G-SVREXW771C"
   });
 
-  //userId: KxjSE5Z7ryK1DERn5dL6
+  //userId: KxjSE5Z7ryK1DERn5dL6 #ff7f50
 
   export { firebaseConfig as firebase};

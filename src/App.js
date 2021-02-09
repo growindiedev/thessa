@@ -1,14 +1,16 @@
 import React from 'react'
-import {Header} from './components/layout /Header'
-import {Content} from './components/layout /Content'
+import {Header} from './components/layout/Header'
+import {Content} from './components/layout/Content'
+import {ProjectsProvider, SelectedProjectProvider} from './context'
 
 export const App = () => {
   return (
-    <div>
-      <h1>this is App.js</h1>
-      <Header/>
-      <Content/>
-    </div>
+      <SelectedProjectProvider>
+        <ProjectsProvider>
+          <Header/>
+          <Content/>
+        </ProjectsProvider>
+      </SelectedProjectProvider>
   )
 }
 
