@@ -4,56 +4,58 @@ import moment from 'moment';
 import { firebase } from '../firebase';
 import { ProjectOverlay } from './ProjectOverlay';
 import { TaskDate } from './TaskDate';
+import { useSelectedProjectValue, useProjectsValue } from '../context';
 
-export const AddTask = ({
-  projects,
-  selectedProject,
-  showAddTaskMain = true,
-  shouldShowMain = false,
-  showQuickAddTask,
-  setShowQuickAddTask,
-}) => {
-  const [task, setTask] = useState('');
-  const [taskDate, setTaskDate] = useState('');
-  const [project, setProject] = useState('');
-  const [showMain, setShowMain] = useState(shouldShowMain);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [showTaskDate, setShowTaskDate] = useState(false);
 
-  const addTask = () => {
-    const projectId = project || selectedProject;
-    let collatedDate = '';
+    export const AddTask = ({
+      showAddTaskMain = true,
+      shouldShowMain = false,
+      showQuickAddTask,
+      setShowQuickAddTask,
+    }) => {
+      const [task, setTask] = useState('');
+      const [taskDate, setTaskDate] = useState('');
+      const [project, setProject] = useState('');
+      const [showMain, setShowMain] = useState(shouldShowMain);
+      const [showOverlay, setShowOverlay] = useState(false);
+      const [showTaskDate, setShowTaskDate] = useState(false);
 
-    if (projectId === 'TODAY') {
-      collatedDate = moment().format('DD/MM/YYYY');
-    } else if (projectId === 'NEXT_7') {
-      collatedDate = moment()
-        .add(7, 'days')
-        .format('DD/MM/YYYY');
-    }
+      const { projects } = useProjectsValue();
+      const { selectedProject } = useSelectedProjectValue();
 
-    return (
-      task &&
-      projectId &&
-      firebase
-        .firestore()
-        .collection('tasks')
-        .add({
-          archived: false,
-          projectId,
-          task,
-          date: collatedDate || taskDate,
-          userId: 'jlIFXIwyAL3tzHMtzRbw',
-        })
-        .then(() => {
-          setTask('');
-          setProject('');
-          setShowMain(false);
-          setShowOverlay(false);
-          setShowQuickAddTask(false);
-        })
-    );
-  };
+      const addTask = () => {
+        const projectId = project || selectedProject;
+        let collatedDate = '';
+
+        if (projectId === 'TODAY') {
+          collatedDate = moment().format('DD/MM/YYYY');
+        } else if (projectId === 'NEXT_7') {
+          collatedDate = moment()
+            .add(7, 'days')
+            .format('DD/MM/YYYY');
+        }
+
+        return (
+          task &&
+          projectId &&
+          firebase
+            .firestore()
+            .collection('tasks')
+            .add({
+              archived: false,
+              projectId,
+              task,
+              date: collatedDate || taskDate,
+              userId: 'KxjSE5Z7ryK1DERn5dL6',
+            })
+            .then(() => {
+              setTask('');
+              setProject('');
+              setShowMain(false);
+              setShowOverlay(false);
+              })
+            );
+        };
 
   return (
     <div
@@ -88,11 +90,11 @@ export const AddTask = ({
             </>
           )}
           <ProjectOverlay
-            projects={projects}
+          projects={projects}
             setProject={setProject}
             showOverlay={showOverlay}
             setShowOverlay={setShowOverlay}
-          />
+          /> 
           <TaskDate
             setTaskDate={setTaskDate}
             showTaskDate={showTaskDate}

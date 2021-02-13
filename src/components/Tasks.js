@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Checkbox } from './Checkbox';
 import { AddTask } from './AddTask';
 import { useTasks } from '../hooks';
@@ -10,6 +10,7 @@ export const Tasks = () => {
   const { selectedProject } = useSelectedProjectValue();
   const { projects } = useProjectsValue();
   const { tasks } = useTasks(selectedProject);
+
 
   let projectName = '';
 
@@ -43,7 +44,9 @@ export const Tasks = () => {
         ))}
       </ul>
 
-      <AddTask /> 
+  
+
+      <AddTask/> 
     </div>
   );
 };
