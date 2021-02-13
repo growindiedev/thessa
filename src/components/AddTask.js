@@ -51,7 +51,7 @@ import { useSelectedProjectValue, useProjectsValue } from '../context';
             .then(() => {
               setTask('');
               setProject('');
-              setShowMain(false);
+              setShowMain('');
               setShowOverlay(false);
               })
             );

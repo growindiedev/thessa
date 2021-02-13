@@ -18,12 +18,12 @@ export const AddProject = ({ projects, setProjects }) => {
         userId: 'KxjSE5Z7ryK1DERn5dL6',
       })
       .then(() => {
-        // const newProjects = [
-        //   ...projects,
-        //   { name: projectName, projectId, userId: 'KxjSE5Z7ryK1DERn5dL6' },
-        // ];
-        // newProjects.sort((a, b) => (a.projectId > b.projectId ? 1 : -1));
-       // setProjects(newProjects);
+        const newProjects = [
+          ...projects,
+          { name: projectName, projectId, userId: 'KxjSE5Z7ryK1DERn5dL6' },
+        ];
+        newProjects.sort((a, b) => (a.projectId > b.projectId ? 1 : -1));
+       setProjects(newProjects);
         setProjects([]);
         setProjectName('');
         setShow(false);
