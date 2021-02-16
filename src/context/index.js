@@ -13,7 +13,7 @@ import {
 import {
   AuthContext, 
   AuthContextProvider,
-  useAuthContext, 
+  useAuth, 
 } from './AuthContext'
   
   export {
@@ -24,6 +24,6 @@ import {
     SelectedProjectProvider,
     useSelectedProjectValue,
     AuthContextProvider,
-    useAuthContext,
+    useAuth,
     AuthContext
   };

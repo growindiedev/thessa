@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import {Header} from './components/layout/Header'
 import {Content} from './components/layout/Content'
-import {ProjectsProvider, SelectedProjectProvider} from './context'
+import {ProjectsProvider, SelectedProjectProvider, AuthContextProvider} from './context'
 
 export const App = ({ darkmodeDefault = false }) => {
 
   const [darkMode, setDarkMode] = useState(darkmodeDefault)
 
   return (
+      <AuthContextProvider>
       <SelectedProjectProvider>
         <ProjectsProvider>
           <main 
@@ -20,6 +21,7 @@ export const App = ({ darkmodeDefault = false }) => {
           
         </ProjectsProvider>
       </SelectedProjectProvider>
+      </AuthContextProvider>
   )
 }
 
