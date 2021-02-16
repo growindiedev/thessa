@@ -14,11 +14,10 @@ export const Header = ({darkMode, setDarkMode}) => {
   const history = useHistory()
 
   async function handleLogout() {
-    setError("")
-
     try {
       await logout()
       history.push("/login")
+      console.log('user', currentUser)
     } catch {
       console.log('failed to logout')
     }
@@ -50,7 +49,9 @@ export const Header = ({darkMode, setDarkMode}) => {
               <FaPizzaSlice />
             </li>
             <li className="user__status" onClick={handleLogout}>
+              <div>
               <GoSignOut/>
+              </div>
             </li>
           </ul>
         </div>
