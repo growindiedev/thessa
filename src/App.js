@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Header} from './components/layout/Header'
 import {Content} from './components/layout/Content'
+import {Main} from './components/Main'
 import {Login} from './components/Authentication/Login'
 import {Signup} from './components/Authentication/Signup'
 import {ForgotPassword} from './components/Authentication/ForgotPassword'
@@ -12,15 +13,15 @@ export const App =  ({ darkmodeDefault = false }) => {
 
   const [darkMode, setDarkMode] = useState(darkmodeDefault)
 
-
   return (
-    <Router>
+    
+    
+      <AuthContextProvider>
+      <ProjectsProvider>
       <SelectedProjectProvider>
-        <ProjectsProvider>
-        <AuthContextProvider>
-
+          <Router>
           <Switch>
-            <PrivateRoute exact path="/">
+            {/* <PrivateRoute exact path="/" >
                   <main 
                   data-testid="application"
                   className={ darkMode ? 'darkmode' : undefined}
@@ -28,8 +29,8 @@ export const App =  ({ darkmodeDefault = false }) => {
                     <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
                     <Content/>
                   </main>
-            </PrivateRoute>
-
+            </PrivateRoute> */}
+            <PrivateRoute exact path="/" component={Main}/>
             <Route path="/login">
               <Login/>
             </Route>
@@ -40,11 +41,11 @@ export const App =  ({ darkmodeDefault = false }) => {
               <ForgotPassword/>
             </Route>
           </Switch>
-          </AuthContextProvider>
-
-        </ProjectsProvider>
+          </Router>
       </SelectedProjectProvider>
-    </Router>
+      </ProjectsProvider>
+      </AuthContextProvider>
+    
       
   )
 }

@@ -9,8 +9,36 @@ export  function PrivateRoute({ component: Component, children, ...rest }) {
         <Route
           {...rest}
           render={props => {
-            return currentUser  ? <Component {...props} />: <Redirect to="/login" />
+            return !!currentUser  ? <Component {...props} />: <Redirect to={"/login"} />
           }}
-        >{currentUser && children}</Route>
+          
+        ></Route>
       )
   }
+
+
+  // export function PrivateRoute({ user, children, ...rest }) {
+  //   return (
+  //     <Route
+  //       {...rest}
+  //       render={({ location }) => {
+  //         if (user) {
+  //           return children;
+  //         }
+  
+  //         if (!user) {
+  //           return (
+  //             <Redirect
+  //               to={{
+  //                 pathname: 'login',
+  //                 state: { from: location },
+  //               }}
+  //             />
+  //           );
+  //         }
+  
+  //         return null;
+  //       }}
+  //     />
+  //   );
+  // }

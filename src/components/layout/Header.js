@@ -17,7 +17,7 @@ export const Header = ({darkMode, setDarkMode}) => {
     try {
       await logout()
       history.push("/login")
-      console.log('user', currentUser)
+      console.log('user', currentUser.uid)
     } catch {
       console.log('failed to logout')
     }

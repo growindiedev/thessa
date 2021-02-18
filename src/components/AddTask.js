@@ -4,7 +4,7 @@ import moment from 'moment';
 import { firebase } from '../firebase';
 import { ProjectOverlay } from './ProjectOverlay';
 import { TaskDate } from './TaskDate';
-import { useSelectedProjectValue, useProjectsValue } from '../context';
+import { useSelectedProjectValue, useProjectsValue, useAuth} from '../context';
 
 
     export const AddTask = ({
@@ -22,6 +22,7 @@ import { useSelectedProjectValue, useProjectsValue } from '../context';
 
       const { projects } = useProjectsValue();
       const { selectedProject } = useSelectedProjectValue();
+      const { currentUser } = useAuth();
 
       const addTask = () => {
         const projectId = project || selectedProject;
@@ -46,7 +47,7 @@ import { useSelectedProjectValue, useProjectsValue } from '../context';
               projectId,
               task,
               date: collatedDate || taskDate,
-              userId: 'KxjSE5Z7ryK1DERn5dL6',
+              userId: currentUser.uid,
             })
             .then(() => {
               setTask('');

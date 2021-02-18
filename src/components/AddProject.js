@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { firebase } from '../firebase';
 import { v4 as uuidv4} from 'uuid'
+import { useAuth } from "../context"
+
 
 export const AddProject = ({ projects, setProjects }) => {
   const [show, setShow] = useState(false);
   const [projectName, setProjectName] = useState('');
   const projectId = uuidv4();
+  const { currentUser } = useAuth()
+
 
   const addProject = () =>
     projectName &&
@@ -15,7 +19,7 @@ export const AddProject = ({ projects, setProjects }) => {
       .add({
         projectId,
         name: projectName,
-        userId: 'KxjSE5Z7ryK1DERn5dL6',
+        userId: currentUser.uid,
       })
       .then(() => {
         // const newProjects = [
