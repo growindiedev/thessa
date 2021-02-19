@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Header} from './components/layout/Header'
 import {Content} from './components/layout/Content'
-import {Main} from './components/Main'
+//import {Main} from './components/Main'
 import {Login} from './components/Authentication/Login'
 import {Signup} from './components/Authentication/Signup'
 import {ForgotPassword} from './components/Authentication/ForgotPassword'
@@ -15,22 +15,29 @@ export const App =  ({ darkmodeDefault = false }) => {
 
   return (
     
-    
+    <Router>
       <AuthContextProvider>
       <ProjectsProvider>
       <SelectedProjectProvider>
-          <Router>
           <Switch>
-            {/* <PrivateRoute exact path="/" >
-                  <main 
-                  data-testid="application"
-                  className={ darkMode ? 'darkmode' : undefined}
-                  >
-                    <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
-                    <Content/>
-                  </main>
-            </PrivateRoute> */}
-            <PrivateRoute exact path="/" component={Main}/>
+            
+
+              <PrivateRoute
+                exact
+                path='/'
+                component={() => (
+                  <main
+                    data-testid='application'
+                    className={darkMode ? 'darkmode' : undefined}
+                    >
+                      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+                      <Content />
+                    </main>
+                )}
+              />
+
+
+            {/* <PrivateRoute exact path="/" component={Main}/> */}
             <Route path="/login">
               <Login/>
             </Route>
@@ -41,11 +48,11 @@ export const App =  ({ darkmodeDefault = false }) => {
               <ForgotPassword/>
             </Route>
           </Switch>
-          </Router>
+          
       </SelectedProjectProvider>
       </ProjectsProvider>
       </AuthContextProvider>
-    
+      </Router>
       
   )
 }

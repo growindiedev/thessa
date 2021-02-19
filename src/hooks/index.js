@@ -3,11 +3,11 @@ import moment from 'moment';
 import { firebase } from '../firebase';
 import { collatedTasksExist } from '../helpers';
 import { useAuth } from '../context'
+import {useHistory} from "react-router-dom";
 
 export const useTasks = selectedProject => {
   const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);
-  
   const { currentUser } = useAuth()
   useEffect(() => { 
 
@@ -53,7 +53,7 @@ export const useTasks = selectedProject => {
   
     
     
-  }, [selectedProject, currentUser]);
+  }, [selectedProject]);
 
 
   return { tasks, archivedTasks };
@@ -62,8 +62,15 @@ export const useTasks = selectedProject => {
 export const useProjects = () => {
   const [projects, setProjects] = useState([]);
   const { currentUser } = useAuth()
+  let history = useHistory()
 
   useEffect(() => {
+
+    if (!currentUser) {
+      history.push("/login")
+      return { projects, setProjects }
+    }
+
       firebase
       .firestore()
       .collection('projects')
@@ -84,8 +91,8 @@ export const useProjects = () => {
 
       
     
-  }, [projects, currentUser]);
+  }, [projects]);
 
-
+          
   return { projects, setProjects };
 };

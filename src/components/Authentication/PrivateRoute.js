@@ -17,28 +17,3 @@ export  function PrivateRoute({ component: Component, children, ...rest }) {
   }
 
 
-  // export function PrivateRoute({ user, children, ...rest }) {
-  //   return (
-  //     <Route
-  //       {...rest}
-  //       render={({ location }) => {
-  //         if (user) {
-  //           return children;
-  //         }
-  
-  //         if (!user) {
-  //           return (
-  //             <Redirect
-  //               to={{
-  //                 pathname: 'login',
-  //                 state: { from: location },
-  //               }}
-  //             />
-  //           );
-  //         }
-  
-  //         return null;
-  //       }}
-  //     />
-  //   );
-  // }
