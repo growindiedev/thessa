@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b8157d2.chunk.css",
-    "main.js": "/static/js/main.7414ee3b.chunk.js",
-    "main.js.map": "/static/js/main.7414ee3b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3fde3a81.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3fde3a81.js.map",
-    "static/js/2.e3bbcaec.chunk.js": "/static/js/2.e3bbcaec.chunk.js",
-    "static/js/2.e3bbcaec.chunk.js.map": "/static/js/2.e3bbcaec.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.5b8157d2.chunk.css.map": "/static/css/main.5b8157d2.chunk.css.map",
-    "static/js/2.e3bbcaec.chunk.js.LICENSE.txt": "/static/js/2.e3bbcaec.chunk.js.LICENSE.txt"
+    "main.css": "/thessa/static/css/main.5b8157d2.chunk.css",
+    "main.js": "/thessa/static/js/main.7414ee3b.chunk.js",
+    "main.js.map": "/thessa/static/js/main.7414ee3b.chunk.js.map",
+    "runtime-main.js": "/thessa/static/js/runtime-main.88d0024f.js",
+    "runtime-main.js.map": "/thessa/static/js/runtime-main.88d0024f.js.map",
+    "static/js/2.9e1f7a99.chunk.js": "/thessa/static/js/2.9e1f7a99.chunk.js",
+    "static/js/2.9e1f7a99.chunk.js.map": "/thessa/static/js/2.9e1f7a99.chunk.js.map",
+    "index.html": "/thessa/index.html",
+    "static/css/main.5b8157d2.chunk.css.map": "/thessa/static/css/main.5b8157d2.chunk.css.map",
+    "static/js/2.9e1f7a99.chunk.js.LICENSE.txt": "/thessa/static/js/2.9e1f7a99.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3fde3a81.js",
-    "static/js/2.e3bbcaec.chunk.js",
+    "static/js/runtime-main.88d0024f.js",
+    "static/js/2.9e1f7a99.chunk.js",
     "static/css/main.5b8157d2.chunk.css",
     "static/js/main.7414ee3b.chunk.js"
   ]
