@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
-import { FaPizzaSlice } from 'react-icons/fa';
-import {GoSignOut} from 'react-icons/go'
+import { GiWolfHowl } from 'react-icons/gi';
+import {FaSignOutAlt} from 'react-icons/fa'
+//import { SiWolframlanguage } from 'react-icons/si'
 import { AddTask } from '../AddTask';
 import { useAuth } from "../../context"
 import { Link, useHistory } from "react-router-dom"
@@ -16,7 +17,7 @@ export const Header = ({darkMode, setDarkMode}) => {
   async function handleLogout() {
     try {
       await logout()
-      history.push("/login")
+      history.push("/authenticate")
       console.log('user', currentUser.uid)
     } catch {
       console.log('failed to logout')
@@ -46,11 +47,11 @@ export const Header = ({darkMode, setDarkMode}) => {
               className="settings__dark-mode"
               onClick={() => setDarkMode(!darkMode)}
             >
-              <FaPizzaSlice />
+              <GiWolfHowl />
             </li>
             <li className="user__status" onClick={handleLogout}>
               <div>
-              <GoSignOut/>
+              <FaSignOutAlt/>
               </div>
             </li>
           </ul>

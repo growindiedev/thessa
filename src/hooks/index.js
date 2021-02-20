@@ -53,7 +53,7 @@ export const useTasks = selectedProject => {
   
     
     
-  }, [selectedProject]);
+  }, [selectedProject, currentUser]);
 
 
   return { tasks, archivedTasks };
@@ -67,7 +67,7 @@ export const useProjects = () => {
   useEffect(() => {
 
     if (!currentUser) {
-      history.push("/login")
+      history.push("/authenticate")
       return { projects, setProjects }
     }
 
@@ -91,7 +91,7 @@ export const useProjects = () => {
 
       
     
-  }, [projects]);
+  }, [projects, currentUser]);
 
           
   return { projects, setProjects };
