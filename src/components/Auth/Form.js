@@ -13,6 +13,7 @@ import {LoginForm} from './LoginForm';
 
 export const Form = () => {
 	const { colorMode } = useColorMode();
+	document.title = `Thessa 👥`
 	return (
 		<Box
 			bg={colorMode === 'light' ? 'gray.200' : 'gray.600'}
