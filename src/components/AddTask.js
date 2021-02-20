@@ -54,6 +54,7 @@ import { useSelectedProjectValue, useProjectsValue, useAuth} from '../context';
               setProject('');
               setShowMain('');
               setShowOverlay(false);
+              showQuickAddTask && setShowQuickAddTask && setShowQuickAddTask(false); //new
               })
             );
         };

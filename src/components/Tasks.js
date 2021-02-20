@@ -12,7 +12,7 @@ export const Tasks = () => {
   const { tasks } = useTasks(selectedProject);
 
 
-  let projectName = '';
+  let projectName ='';
 
   if (collatedTasksExist(selectedProject) && selectedProject) {
     projectName = getCollatedTitle(collatedTasks, selectedProject).name;
@@ -28,7 +28,7 @@ export const Tasks = () => {
   }
 
   useEffect(() => {
-    document.title = `${projectName}: Thessa`;
+    document.title = `${projectName}`;
   });
 
   return (
