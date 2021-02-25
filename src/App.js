@@ -5,10 +5,7 @@ import { Form } from './components/Auth/Form'
 import {ProjectsProvider, SelectedProjectProvider, AuthContextProvider, useAuth} from './context'
 import { PrivateRoute } from './components/Auth/PrivateRoute'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import {
-	Flex,
-	ChakraProvider,
-} from '@chakra-ui/react';
+import { Flex, ChakraProvider } from '@chakra-ui/react';
 
 export const App =  ({ darkmodeDefault = false }) => {
 
